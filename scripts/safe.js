@@ -1,4 +1,3 @@
-
 let container = document.querySelector('#youare-container');
 
 let audio = document.querySelector('#youare-audio');
@@ -18,11 +17,10 @@ function audioPlay() {
 		ovlap.currentTime = 0;
 		ovlap.play();
 	}
-	
-	
+
 	audio.addEventListener('timeupdate', audioOverlap);
 	ovlap.addEventListener('timeupdate', audioOverlap);
-	
+
 	container.classList.remove('clicky');
 }
 const promise = audioPlay();
@@ -35,19 +33,18 @@ if (promise !== undefined) {
 function audioStop() {
 	audio.currentTime = 0;
 	audio.pause();
-	
+
 	ovlap.currentTime = 0;
 	ovlap.pause();
-	
-	
+
 	audio.removeEventListener('timeupdate', audioOverlap);
 	ovlap.removeEventListener('timeupdate', audioOverlap);
-	
+
 	container.classList.add('clicky');
 	micon.src = "/images/speakerm.avif";
 }
 
-function audioSwitch() {	
+function audioSwitch() {
 	if (
 		audio.duration > 0 && audio.paused &&
 		ovlap.duration > 0 && ovlap.paused
@@ -59,7 +56,7 @@ function audioSwitch() {
 	}
 }
 
-/* 
+/*
  * [Aug 2023] Finally, after 3 years have passed, I made the overlapping mechanism.
  * Audio overlapping is necessary for historic accuracy. The original flash version used to randomly overlap the song over itself.
  * I also think it sounds funnier and less respectful when overlapped.
@@ -69,22 +66,25 @@ function audioOverlap() {
     if (!overlap && audio.currentTime > audio.duration - .45) {
         ovlap.currentTime = 0;
         ovlap.play();
-		
+
 		overlap = true;
     }
-	
+
 	if (overlap && ovlap.currentTime > ovlap.duration - .5) {
         audio.currentTime = 0;
         audio.play();
-		
+
 		overlap = false;
     }
 }
 
-container.addEventListener('click', audioPlay);
-container.addEventListener('click', () => {
+// Remove click event listeners
+container.removeEventListener('click', audioPlay);
+container.removeEventListener('click', () => {
 	container.classList.remove('clicky');
 });
-audioPlay()
+
+// Call audioPlay directly on page load
+audioPlay();
 
 micon.addEventListener('click', audioSwitch);
