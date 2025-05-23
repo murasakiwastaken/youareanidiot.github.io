@@ -1,5 +1,3 @@
-How can I adjust this code so that there's no speaker icon, no icon at all, just plays the audio straight up.
-
 let container = document.querySelector('#youare-container');
 
 let audio = document.querySelector('#youare-audio');
