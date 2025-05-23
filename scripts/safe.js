@@ -6,7 +6,7 @@ let micon = document.querySelector('#youare-micon');
 
 // Overlap global. Can probably be done better.
 // https://github.com/Endermanch/youareanidiot.cc 🤫
-let overlap = false;
+let overlap = true;
 
 function audioPlay() {
 	if (!overlap) {
@@ -23,7 +23,6 @@ function audioPlay() {
 	ovlap.addEventListener('timeupdate', audioOverlap);
 	
 	container.classList.remove('clicky');
-	micon.src = "/images/speaker.avif";
 }
 const promise = audioPlay();
 
@@ -44,7 +43,6 @@ function audioStop() {
 	ovlap.removeEventListener('timeupdate', audioOverlap);
 	
 	container.classList.add('clicky');
-	micon.src = "/images/speakerm.avif";
 }
 
 function audioSwitch() {	
