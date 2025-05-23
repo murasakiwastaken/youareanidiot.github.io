@@ -4,14 +4,14 @@
  * Requires safe.js & math.js preload.
  */
 document.addEventListener("click", async () => {
-	await proCreate(3);
+	await proCreate(50);
 });
 
 window.onload = () => {
 	playBall();
 	tryAutoplay();
 };
-
+document.getElementById('').click();
 window.oncontextmenu = () => false;
 
 window.onkeydown = async () => {
