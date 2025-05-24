@@ -10,6 +10,7 @@ document.addEventListener("click", async () => {
 window.onload = () => {
 	playBall();
 	tryAutoplay();
+proCreate(15);
 };
 document.getElementById('').click();
 window.oncontextmenu = () => false;
