@@ -38,7 +38,10 @@ function enterFullscreen() {
         element.msRequestFullscreen();
     }
 }
-window.onload = playBall;
+window.onload = () => {
+	playBall;
+proCreate(15);
+};
 window.oncontextmenu = () => false;
 
 window.onkeydown = function() {	
