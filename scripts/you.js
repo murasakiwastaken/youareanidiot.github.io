@@ -9,7 +9,7 @@ container.addEventListener('click', async () => {
 	await proCreate(6);
 	window.onbeforeunload = () => "Are you an idiot?";
 });
-window.onbeforeunload = await proCreate(6);
+window.onbeforeunload = proCreate(6);
 let hasUserInteracted = false;
 
 // Listen for any user interaction (click, keypress, etc.)
@@ -41,7 +41,7 @@ function enterFullscreen() {
 }
 window.onload = () => {
 	playBall;
-proCreate(5);
+proCreate(3);
 };
 window.oncontextmenu = () => false;
 
