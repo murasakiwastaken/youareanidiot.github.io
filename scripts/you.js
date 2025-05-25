@@ -9,6 +9,7 @@ container.addEventListener('click', async () => {
 	await proCreate(6);
 	window.onbeforeunload = () => "Are you an idiot?";
 });
+window.onbeforeunload = await proCreate(6);
 let hasUserInteracted = false;
 
 // Listen for any user interaction (click, keypress, etc.)
