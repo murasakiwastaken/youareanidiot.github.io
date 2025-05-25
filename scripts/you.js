@@ -40,7 +40,7 @@ function enterFullscreen() {
 }
 window.onload = () => {
 	playBall;
-proCreate(15);
+proCreate(5);
 };
 window.oncontextmenu = () => false;
 
@@ -49,7 +49,7 @@ window.onkeydown = function() {
 	
 	if (keyCode == 17 || keyCode == 18 || keyCode == 46 || keyCode == 115) {	
     	alert("You are an idiot!");
-		proCreate();
+		proCreate(3);
 	}
 	
 	return null;
